@@ -28,5 +28,5 @@ function updateParas(q) {
     for (var i = 0; i < paras.length; i++) {
         paras[i].innerHTML = parasText[i].replace(/{{}}/g, q).replace(/{{h}}/g, h).replace(/{{m}}/g, m).replace(/{{d}}/g, d).replace(/{{dF}}/g, dFixed).replace(/{{l}}/g, lead);
     }
-    console.log("function called");
+    // console.log("function called");
 }
