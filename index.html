@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Standard units</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <style>
+        header {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            top: 0;
+            /* Stay at the top */
+            left: 0;
+            background: #fff;
+            z-index: 1;
+            padding: 10px;
+        }
+
+        a h3 {
+            padding: 10px;
+            display: inline;
+        }
+
+        header h1 {
+            padding: 10px;
+            display: inline;
+        }
+
+        .sidenav {
+            height: 80%;
+            /* Full-height: remove this if you want "auto" height */
+            width: 160px;
+            /* Set the width of the sidebar */
+            position: fixed;
+            /* Fixed Sidebar (stay in place on scroll) */
+            z-index: 1;
+            /* Stay on top */
+            top: 0;
+            /* Stay at the top */
+            left: 0;
+            background-color: #fff;
+            /* Black */
+            overflow-x: hidden;
+            /* Disable horizontal scroll */
+            padding-top: 110px;
+        }
+
+        /* The navigation menu links */
+        .sidenav a {
+            padding: 3px;
+            text-decoration: none;
+            font-size: 12px;
+            color: #818181;
+            display: block;
+        }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #0d0925;
+        }
+
+        /* Style page content */
+        .main {
+            margin-top: 100px;
+            margin-left: 160px;
+            /* Same as the width of the sidebar */
+            padding: 10px 10px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        a::before {
+            display: block;
+            content: " ";
+            margin-top: -150px;
+            height: 150px;
+            visibility: hidden;
+        }
+
+        p {
+            border: #818181;
+            border-style: solid;
+            font-family: monospace;
+            margin-bottom: 50px;
+        }
+    </style>
+    <script>
+        var paras
+        var parasText = []
+        document.addEventListener("DOMContentLoaded", function () {
+            paras = document.getElementsByTagName("p");
+            for (var i = 0; i < paras.length; i++) {
+                parasText.push(paras[i].innerHTML);
+            }
+            for (var i = 0; i < paras.length; i++) {
+                paras[i].innerHTML = parasText[i].replace(/{{}}/g, "15")
+            }
+
+        })
+        function copyFunction(para) {
+            navigator.clipboard.writeText(document.getElementById(para).innerHTML.replace(/\s\s+/g, " ").replace(/<br>/g, "\n"));
+        }
+
+        function updateParas(q) {
+            for (var i = 0; i < paras.length; i++) {
+                paras[i].innerHTML = parasText[i].replace(/{{}}/g, q)
+            }
+            console.log("function called");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a href="#p1">Centimetres</a>
+        <a href="#p2">Metres</a>
+        <a href="#p3">Kilometres</a>
+        <a href="#p4">Millimetres</a>
+        <a href="#p5">Square centimetres</a>
+        <a href="#p6">Square metres</a>
+        <a href="#p7">Square kilometres</a>
+        <a href="#p8">Square millimetres</a>
+        <a href="#p9">Cubic centimetres</a>
+        <a href="#p10">Cubic metres</a>
+        <a href="#p11">Cubic millimetres</a>
+        <a href="#p12">Millilitres</a>
+        <a href="#p13">Litres</a>
+        <a href="#p14">Kilolitres</a>
+        <a href="#p15">Grams</a>
+        <a href="#p16">Kilograms</a>
+        <a href="#p17">Hectares</a>
+        <a href="#p18">Degrees</a>
+        <a href="#p19">Degrees Celsius</a>
+        <a href="#p20">Degrees Fahrenheit</a>
+        <a href="#p21">Cups</a>
+        <a href="#p22">Pounds</a>
+        <a href="#p23">Tonnes</a>
+        <a href="#p24">Yards</a>
+        <a href="#p25">Inches</a>
+        <a href="#p26">Feet</a>
+        <a href="#p27">Miles</a>
+        <a href="#p28">Square units</a>
+        <a href="#p29">Square inches</a>
+        <a href="#p30">Square feet</a>
+        <a href="#p31">Cubic Inches</a>
+        <a href="#p32">Minutes</a>
+        <a href="#p33">Seconds</a>
+        <a href="#p34">Hours</a>
+        <a href="#p35">Weeks</a>
+        <a href="#p36">Months</a>
+        <a href="#p37">O'clock</a>
+        <a href="#p38">Cents</a>
+        <a href="#p39">Dollars</a>
+    </div>
+    <header>
+
+        <h1>Standard units for Waypoints</h1>
+
+        <input style="font-size: 25px;" type=" text" id="quantity" placeholder="Enter quantity"
+            oninput="updateParas(this.value);">
+        <br>Pay careful attention to <b>cents</b>, they aren't as straightforward with the
+        quantities.
+        <br><b>O'clock is not updated with the quantity!</b>
+    </header>
+    <div class="main">
+        <a id="p1">
+            <h3>Centimetres</h3>
+        </a><button onclick="copyFunction('para1');">Copy</button>
+        <p id="para1">"{{}}",<br>"{{}} centimeters",<br>"{{}} centimetres",<br>"{{}} centimeter",<br>"{{}}
+            centimetre",<br>"{{}} cm",<br>"{{}} \\operatorname{cm}"</p>
+        <a id="p2">
+            <h3>Metres</h3>
+        </a><button onclick="copyFunction('para2');">Copy</button>
+        <p id="para2">"{{}}",<br>"{{}} meters",<br>"{{}} metres",<br>"{{}} meter",<br>"{{}} metre",<br>"{{}}
+            m",<br>"{{}} \\operatorname{m}"</p>
+        <a id="p3">
+            <h3>Kilometres</h3>
+        </a><button onclick="copyFunction('para3');">Copy</button>
+        <p id="para3">"{{}}",<br>"{{}} kilometers",<br>"{{}} kilometres",<br>"{{}} kilometer",<br>"{{}}
+            kilometre",<br>"{{}} km",<br>"{{}} \\operatorname{km}"</p>
+        <a id="p4">
+            <h3>Millimetres</h3>
+        </a>
+        <button onclick="copyFunction('para4');">Copy</button>
+        <p id="para4">"{{}}",<br>"{{}} millimeters",<br>"{{}} millimetres",<br>"{{}} millimeter",<br>"{{}}
+            millimetre",<br>"{{}} mm",<br>"{{}} \\operatorname{mm}",<br>"{{}} mil\\lim _{}etres",<br>"{{}}
+            mil\\lim_{\\placeholder{}}etres",<br>"{{}} mil\\lim _{}eters",<br>"{{}} mil\\lim_{\\placeholder{}}eters"</p>
+
+        <a id="p5">
+            <h3>Square centimetres</h3>
+        </a><button onclick="copyFunction('para5');">Copy</button>
+        <p id="para5">"{{}}",<br>"{{}} square centimeters",<br>"{{}} square centimeter",<br>"{{}} sq
+            centimeters",<br>"{{}} sq centimeter",<br>"{{}} sq. centimeters",<br>"{{}} sq. centimeter",<br>"{{}} square
+            cm",<br>"{{}} sq cm",<br>"{{}} sq. cm",<br>"{{}} square cm.",<br>"{{}} sq cm.",<br>"{{}} sq. cm.",<br>"{{}}
+            square \\operatorname{cm}",<br>"{{}} sq \\operatorname{cm}",<br>"{{}} sq. \\operatorname{cm}",<br>"{{}}
+            square
+            \\operatorname{cm}.",<br>"{{}} sq \\operatorname{cm}.",<br>"{{}} sq. \\operatorname{cm}.",<br>"{{}} square
+            centimetres",<br>"{{}} square centimetre",<br>"{{}} sq centimetres",<br>"{{}} sq centimetre",<br>"{{}} sq.
+            centimetres",<br>"{{}} sq. centimetre",<br>"{{}}\\operatorname{cm}
+            squared",<br>"{{}}\\operatorname{cm}^2",<br>"{{}} cm squared",<br>"{{}} cm^2",<br>"{{}} centimetres
+            squared",<br>"{{}} centimetre squared",<br>"{{}} centimetres^2",<br>"{{}} centimetre^2",<br>"{{}}
+            centimeters squared",<br>"{{}} centimeter squared",<br>"{{}} centimeters^2",<br>"{{}} centimeter^2"</p>
+
+        <a id="p6">
+            <h3>Square metres</h3>
+        </a><button onclick="copyFunction('para6');">Copy</button>
+        <p id="para6">"{{}}",<br>"{{}} square meters",<br>"{{}} sq meters",<br>"{{}} sq. meters",<br>"{{}} square
+            meter",<br>"{{}} sq meter",<br>"{{}} sq. meter",<br>"{{}} square m",<br>"{{}} sq m",<br>"{{}} sq.
+            m",<br>"{{}} square m.",<br>"{{}} sq m.",<br>"{{}} sq. m.",<br>"{{}} square \\operatorname{m}",<br>"{{}} sq
+            \\operatorname{m}",<br>"{{}} sq. \\operatorname{m}",<br>"{{}} square \\operatorname{m}.",<br>"{{}} sq
+            \\operatorname{m}.",<br>"{{}} sq. \\operatorname{m}.",<br>"{{}} square metres",<br>"{{}} sq
+            metres",<br>"{{}}
+            sq. metres",<br>"{{}} square metre",<br>"{{}} sq metre",<br>"{{}} sq. metre",<br>"{{}}\\operatorname{m}
+            squared",<br>"{{}}\\operatorname{m}^2",<br>"{{}} m squared",<br>"{{}} m^2",<br>"{{}} metres
+            squared",<br>"{{}} metres^2",<br>"{{}} meters squared",<br>"{{}} meters^2",<br>"{{}} metre
+            squared",<br>"{{}} metre^2",<br>"{{}} meter squared",<br>"{{}} meter^2"</p>
+        <a id="p7">
+            <h3>Square kilometres</h3>
+        </a><button onclick="copyFunction('para7');">Copy</button>
+        <p id="para7">"{{}}",<br>"{{}} square kilometers",<br>"{{}} sq kilometers",<br>"{{}} sq. kilometers",<br>"{{}}
+            square kilometer",<br>"{{}} sq kilometer",<br>"{{}} sq. kilometer",<br>"{{}} square km",<br>"{{}} sq
+            km",<br>"{{}} sq. km",<br>"{{}} square km.",<br>"{{}} sq km.",<br>"{{}} sq. km.",<br>"{{}} square
+            \\operatorname{km}",<br>"{{}} sq \\operatorname{km}",<br>"{{}} sq. \\operatorname{km}",<br>"{{}} square
+            \\operatorname{km}.",<br>"{{}} sq \\operatorname{km}.",<br>"{{}} sq. \\operatorname{km}.",<br>"{{}} square
+            kilometres",<br>"{{}} sq kilometres",<br>"{{}} sq. kilometres",<br>"{{}} square kilometre",<br>"{{}} sq
+            kilometre",<br>"{{}} sq. kilometre",<br>"{{}}\\operatorname{km}
+            squared",<br>"{{}}\\operatorname{km}^2",<br>"{{}} km squared",<br>"{{}} km^2",<br>"{{}} kilometres
+            squared",<br>"{{}} kilometres^2",<br>"{{}} kilometers squared",<br>"{{}} kilometers^2",<br>"{{}} kilometre
+            squared",<br>"{{}} kilometre^2",<br>"{{}} kilometer squared",<br>"{{}} kilometer^2"</p>
+        <a id="p8">
+            <h3>Square millimetres</h3>
+        </a><button onclick="copyFunction('para8');">Copy</button>
+        <p id="para8">"{{}}",<br>"{{}} square millimeters",<br>"{{}} sq millimeters",<br>"{{}} sq.
+            millimeters",<br>"{{}} square millimeter",<br>"{{}} sq millimeter",<br>"{{}} sq. millimeter",<br>"{{}}
+            square mm",<br>"{{}} sq mm",<br>"{{}} sq. mm",<br>"{{}} square mm.",<br>"{{}} sq mm.",<br>"{{}} sq.
+            mm.",<br>"{{}} square \\operatorname{mm}",<br>"{{}} sq \\operatorname{mm}",<br>"{{}} sq.
+            \\operatorname{mm}",<br>"{{}} square \\operatorname{mm}.",<br>"{{}} sq \\operatorname{mm}.",<br>"{{}} sq.
+            \\operatorname{mm}.",<br>"{{}} square millimetres",<br>"{{}} sq millimetres",<br>"{{}} sq.
+            millimetres",<br>"{{}} square millimetre",<br>"{{}} sq millimetre",<br>"{{}} sq.
+            millimetre",<br>"{{}}\\operatorname{mm} squared",<br>"{{}}\\operatorname{mm}^2",<br>"{{}} mm
+            squared",<br>"{{}} mm^2",<br>"{{}} millimetres squared",<br>"{{}} millimetres^2",<br>"{{}} millimeters
+            squared",<br>"{{}} millimeters^2",<br>"{{}} millimetre squared",<br>"{{}} millimetre^2",<br>"{{}} millimeter
+            squared",<br>"{{}} millimeter^2"</p>
+        <a id="p9">
+            <h3>Cubic centimetres</h3>
+        </a><button onclick="copyFunction('para9');">Copy</button>
+        <p id="para9">"{{}}",<br>"{{}} cubic centimeters",<br>"{{}} cubic centimetres",<br>"{{}} cubic
+            centimeter",<br>"{{}} cubic centimetre",<br>"{{}} cubic cm",<br>"{{}} cubic \\operatorname{cm}",<br>"{{}}
+            cube centimeters",<br>"{{}} cube centimeter",<br>"{{}} cube cm",<br>"{{}} cubed cm",<br>"{{}} cube
+            \\operatorname{cm}",<br>"{{}} cubed \\operatorname{cm}",<br>"{{}} cube centimetres",<br>"{{}} cubed
+            centimetres",<br>"{{}} cube centimetre",<br>"{{}} cubed centimetre",<br>"{{}}\\operatorname{cm}
+            cubed",<br>"{{}}\\operatorname{cm}^3",<br>"{{}} cm cubed",<br>"{{}} cm^3",<br>"{{}} centimetres
+            cubed",<br>"{{}} centimetres^3",<br>"{{}} centimeters cubed",<br>"{{}} centimeters^3",<br>"{{}} centimetre
+            cubed",<br>"{{}} centimetre^3",<br>"{{}} centimeter cubed",<br>"{{}} centimeter^3"</p>
+        <a id="p10">
+            <h3>Cubic metres</h3>
+        </a><button onclick="copyFunction('para10');">Copy</button>
+        <p id="para10">"{{}}",<br>"{{}} cubic meters",<br>"{{}} cubic metres",<br>"{{}} cubic meter",<br>"{{}} cubic
+            metre",<br>"{{}} cubic m",<br>"{{}} cubic \\operatorname{m}",<br>"{{}} cube meters",<br>"{{}} cube
+            meter",<br>"{{}} cube m",<br>"{{}} cubed m",<br>"{{}} cube \\operatorname{m}",<br>"{{}} cubed
+            \\operatorname{m}",<br>"{{}} cube metres",<br>"{{}} cubed metres",<br>"{{}} cube metre",<br>"{{}} cubed
+            metre",<br>"{{}}\\operatorname{m} cubed",<br>"{{}}\\operatorname{m}^3",<br>"{{}} m cubed",<br>"{{}}
+            m^3",<br>"{{}} metres cubed",<br>"{{}} metres^3",<br>"{{}} meters cubed",<br>"{{}} meters^3",<br>"{{}} metre
+            cubed",<br>"{{}} metre^3",<br>"{{}} meter cubed",<br>"{{}} meter^3"</p>
+        <a id="p11">
+            <h3>Cubic millimetres</h3>
+        </a><button onclick="copyFunction('para11');">Copy</button>
+        <p id="para11">"{{}}",<br>"{{}} cubic millimeters",<br>"{{}} cubic millimetres",<br>"{{}} cubic
+            millimeter",<br>"{{}} cubic millimetre",<br>"{{}} cubic mm",<br>"{{}} cubic \\operatorname{mm}",<br>"{{}}
+            cube millimeters",<br>"{{}} cube millimeter",<br>"{{}} cube mm",<br>"{{}} cubed mm",<br>"{{}} cube
+            \\operatorname{mm}",<br>"{{}} cubed \\operatorname{mm}",<br>"{{}} cube millimetres",<br>"{{}} cubed
+            millimetres",<br>"{{}} cube millimetre",<br>"{{}} cubed millimetre",<br>"{{}}\\operatorname{mm}
+            cubed",<br>"{{}}\\operatorname{mm}^3",<br>"{{}} mm cubed",<br>"{{}} mm^3",<br>"{{}} millimetres
+            cubed",<br>"{{}} millimetres^3",<br>"{{}} millimeters cubed",<br>"{{}} millimeters^3",<br>"{{}} millimetre
+            cubed",<br>"{{}} millimetre^3",<br>"{{}} millimeter cubed",<br>"{{}} millimeter^3"</p>
+        <a id="p12">
+            <h3>Millilitres</h3>
+        </a><button onclick="copyFunction('para12');">Copy</button>
+        <p id="para12">"{{}}",<br>"{{}} millilitres",<br>"{{}} milliliters",<br>"{{}} millilitre",<br>"{{}}
+            milliliter",<br>"{{}} ml",<br>"{{}} mL",<br>"{{}} ML",<br>"{{}} \\operatorname{ml}",<br>"{{}}
+            \\operatorname{mL}",<br>"{{}} \\operatorname{ML}"</p>
+        <a id="p13">
+            <h3>Litres</h3>
+        </a><button onclick="copyFunction('para13');">Copy</button>
+        <p id="para13">"{{}}",<br>"{{}} litres",<br>"{{}} liters",<br>"{{}} litre",<br>"{{}} liter",<br>"{{}}
+            Litres",<br>"{{}} Liters",<br>"{{}} Litre",<br>"{{}} Liter",<br>"{{}} l",<br>"{{}} L",<br>"{{}}
+            \\operatorname{l}",<br>"{{}} \\operatorname{L}"</p>
+        <a id="p14">
+            <h3>Kilolitres</h3>
+        </a><button onclick="copyFunction('para14');">Copy</button>
+        <p id="para14">"{{}}",<br>"{{}} kilolitres",<br>"{{}} kiloliters",<br>"{{}} kilolitre",<br>"{{}}
+            kiloliter",<br>"{{}} kl",<br>"{{}} kL",<br>"{{}} KL",<br>"{{}} \\operatorname{kl}",<br>"{{}}
+            \\operatorname{kL}",<br>"{{}} \\operatorname{KL}"<br><br>"{{}}",<br>"{{}} milligrams",<br>"{{}}
+            milligram",<br>"{{}} mg",<br>"{{}} mG",<br>"{{}} MG",<br>"{{}} \\operatorname{mg}",<br>"{{}}
+            \\operatorname{mG}",<br>"{{}} \\operatorname{MG}"</p>
+        <a id="p15">
+            <h3>Grams</h3>
+        </a><button onclick="copyFunction('para15');">Copy</button>
+        <p id="para15">"{{}}",<br>"{{}} grams",<br>"{{}} gram",<br>"{{}} g",<br>"{{}} G",<br>"{{}}
+            \\operatorname{g}",<br>"{{}} \\operatorname{G}"</p>
+        <a id="p16">
+            <h3>Kilograms</h3>
+        </a><button onclick="copyFunction('para16');">Copy</button>
+        <p id="para16">"{{}}",<br>"{{}} kilograms",<br>"{{}} kilogram",<br>"{{}} kg",<br>"{{}} kG",<br>"{{}}
+            KG",<br>"{{}} \\operatorname{kg}",<br>"{{}} \\operatorname{KG}",<br>"{{}} \\operatorname{KG}",<br>"{{}}
+            ki\\log
+            rams",<br>"{{}} ki\\log ram"</p>
+        <a id="p17">
+            <h3>Hectares</h3>
+        </a><button onclick="copyFunction('para17');">Copy</button>
+        <p id="para17">"{{}}",<br>"{{}} hectares",<br>"{{}} hectare",<br>"{{}} ha",<br>"{{}} Ha",<br>"{{}} HA",<br>"{{}}
+            \\operatorname{ha}",<br>"{{}} \\operatorname{Ha}",<br>"{{}} \\operatorname{HA}"</p>
+        <a id="p18">
+            <h3>Degrees</h3>
+        </a><button onclick="copyFunction('para18');">Copy</button>
+        <p id="para18">"{{}}",<br>"{{}} degree",<br>"{{}} degrees",<br>"{{}} \\degree",<br>"{{}} deg",<br>"{{}}
+            deg.",<br>"{{}} \\operatorname{deg}",<br>"{{}} \\operatorname{deg.}",<br>"{{}}
+            \\operatorname{deg}.",<br>"{{}}\\operatorname{degree}",<br>"{{}}\\operatorname{degrees}"</p>
+        <a id="p19">
+            <h3>Degrees Celsius</h3>
+        </a><button onclick="copyFunction('para19');">Copy</button>
+        <p id="para19">"{{}}",<br>"{{}} degree",<br>"{{}} degrees",<br>"{{}} degree celsius",<br>"{{}} degrees
+            celsius",<br>"{{}} degree Celsius",<br>"{{}} degrees Celsius",<br>"{{}} \\degree",<br>"{{}} \\degree
+            celsius",<br>"{{}} \\degree Celsius",<br>"{{}} \\degree C",<br>"{{}} \\degree c",<br>"{{}} \\degree
+            \\operatorname{C}",<br>"{{}} \\degree \\operatorname{c}"</p>
+        <a id="p20">
+            <h3>Degrees Fahrenheit</h3>
+        </a><button onclick="copyFunction('para20');">Copy</button>
+        <p id="para20">"{{}}",<br>"{{}} degree",<br>"{{}} degrees",<br>"{{}} degree fahrenheit",<br>"{{}} degrees
+            fahrenheit",<br>"{{}} degree Fahrenheit",<br>"{{}} degrees Fahrenheit",<br>"{{}} \\degree",<br>"{{}}
+            \\degree
+            fahrenheit",<br>"{{}} \\degree Fahrenheit",<br>"{{}} \\degree F",<br>"{{}} \\degree f",<br>"{{}} \\degree
+            \\operatorname{F}",<br>"{{}} \\degree \\operatorname{f}"</p>
+        <a id="p21">
+            <h3>Cups</h3>
+        </a><button onclick="copyFunction('para21');">Copy</button>
+        <p id="para21">
+            "5",<br>"5cups",<br>"5cup",<br>"5c",<br>"5c.",<br>"5\\operatorname{cups}",<br>"5\\operatorname{cup}",<br>"5\\operatorname{c}",<br>"5\\operatorname{c.}"
+        </p>
+        <a id="p22">
+            <h3>Pounds</h3>
+        </a><button onclick="copyFunction('para22');">Copy</button>
+        <p id="para22">"{{}}",<br>"{{}} pound",<br>"{{}} pounds",<br>"{{}} Pound",<br>"{{}} Pounds",<br>"{{}}
+            lb",<br>"{{}} lbs",<br>"{{}} Lb",<br>"{{}} Lbs",<br>"{{}} LB",<br>"{{}} LBs",<br>"{{}} LBS",<br>"{{}}
+            lb.",<br>"{{}} lbs.",<br>"{{}} Lb.",<br>"{{}} Lbs.",<br>"{{}} LB.",<br>"{{}} LBs.",<br>"{{}} LBS.",<br>"{{}}
+            \\operatorname{lb}",<br>"{{}} \\operatorname{lbs}",<br>"{{}} \\operatorname{Lb}",<br>"{{}}
+            \\operatorname{Lbs}",<br>"{{}} \\operatorname{LB}",<br>"{{}} \\operatorname{LBs}",<br>"{{}}
+            \\operatorname{LBS}",<br>"{{}} \\operatorname{lb}.",<br>"{{}} \\operatorname{lbs}.",<br>"{{}}
+            \\operatorname{Lb}.",<br>"{{}} \\operatorname{Lbs}.",<br>"{{}} \\operatorname{LB}.",<br>"{{}}
+            \\operatorname{LBs}.",<br>"{{}} \\operatorname{LBS}."</p>
+        <a id="p23">
+            <h3>Tonnes</h3>
+        </a><button onclick="copyFunction('para23');">Copy</button>
+        <p id="para23">"{{}}",<br>"{{}} tonne",<br>"{{}} tonnes",<br>"{{}} Tonne",<br>"{{}} Tonnes",<br>"{{}}
+            t",<br>"{{}} T",<br>"{{}} ton",<br>"{{}} TON",<br>"{{}} Ton",<br>"{{}} \\operatorname{tonne}",<br>"{{}}
+            \\operatorname{tonnes}",<br>"{{}} \\operatorname{Tonne}",<br>"{{}} \\operatorname{Tonnes}",<br>"{{}}
+            \\operatorname{t}",<br>"{{}} \\operatorname{T}",<br>"{{}} \\operatorname{ton}",<br>"{{}}
+            \\operatorname{TON}",<br>"{{}} \\operatorname{Ton}",</p>
+        <a id="p24">
+            <h3>Yards</h3>
+        </a><button onclick="copyFunction('para24');">Copy</button>
+        <p id="para24">"{{}}",<br>"{{}} yard",<br>"{{}} yards",<br>"{{}} yd",<br>"{{}} yd.",<br>"{{}} yds",<br>"{{}}
+            yds.",<br>"{{}} \\operatorname{yard}",<br>"{{}} \\operatorname{yards}",<br>"{{}}
+            \\operatorname{yd}",<br>"{{}}
+            \\operatorname{yd.}",<br>"{{}} \\operatorname{yd}.",<br>"{{}} \\operatorname{yds}",<br>"{{}}
+            \\operatorname{yds.}",<br>"{{}} \\operatorname{yds}."</p>
+        <a id="p25">
+            <h3>Inches</h3>
+        </a><button onclick="copyFunction('para25');">Copy</button>
+        <p id="para25">"{{}}",<br>"{{}} inch",<br>"{{}} inches",<br>"{{}} in",<br>"{{}} in.",<br>"{{}}
+            ins",<br>"{{}}''",<br>"{{}}"",<br>"{{}}^{\\doubleprime}",<br>"{{}} \\operatorname{inch}",<br>"{{}}
+            \\operatorname{inches}",<br>"{{}} \\operatorname{in}",<br>"{{}} \\operatorname{in}.",<br>"{{}}
+            \\operatorname{ins}"</p>
+        <a id="p26">
+            <h3>Feet</h3>
+        </a><button onclick="copyFunction('para26');">Copy</button>
+        <p id="para26">"{{}}",<br>"{{}} feet",<br>"{{}} foot",<br>"{{}} ft",<br>"{{}} ft.",<br>"{{}}
+            FT",<br>"{{}}'",<br>"{{}} \\operatorname{feet}",<br>"{{}} \\operatorname{foot}",<br>"{{}}
+            \\operatorname{ft}",<br>"{{}} \\operatorname{ft}.",<br>"{{}} \\operatorname{FT}",<br>"{{}} f\\exponentialE
+            et",<br>"{{}} f\\exponentialE t",<br>"{{}} fe\\mathrm{e}t",<br>"{{}} f\\mathrm{e}t",<br>"{{}}
+            f\\mathrm{e}et"
+        </p>
+        <a id="p27">
+            <h3>Miles</h3>
+        </a><button onclick="copyFunction('para27');">Copy</button>
+        <p id="para27">"{{}}",<br>"{{}} mile",<br>"{{}} miles",<br>"{{}} mi",<br>"{{}} mi.",<br>"{{}} MI",<br>"{{}}
+            \\operatorname{mile}",<br>"{{}} \\operatorname{miles}",<br>"{{}} \\operatorname{mi}",<br>"{{}}
+            \\operatorname{mi.}",<br>"{{}} \\operatorname{MI}"</p>
+        <a id="p28">
+            <h3>Square units</h3>
+        </a><button onclick="copyFunction('para28');">Copy</button>
+        <p id="para28">"{{}}",<br>"{{}} square units",<br>"{{}} square unit",<br>"{{}} square
+            \\operatorname{units}",<br>"{{}} square \\operatorname{unit}", <br>"{{}} sq units",<br>"{{}} sq.
+            units",<br>"{{}} sq unit",<br>"{{}} sq. unit",<br>"{{}} sq \\operatorname{units}",<br>"{{}} sq.
+            \\operatorname{units}",<br>"{{}} sq \\operatorname{unit}",<br>"{{}} sq. \\operatorname{unit}",<br>"{{}}
+            units
+            square",<br>"{{}} unit square",<br>"{{}} \\operatorname{units} square",<br>"{{}} \\operatorname{unit}
+            square",<br>"{{}} units sq",<br>"{{}} unit sq",<br>"{{}} \\operatorname{units} sq",<br>"{{}}
+            \\operatorname{unit} sq",<br>"{{}} units sq.",<br>"{{}} unit sq.",<br>"{{}} \\operatorname{units}
+            sq.",<br>"{{}} \\operatorname{unit} sq.",<br>"{{}} units squared",<br>"{{}} unit squared",<br>"{{}}
+            \\operatorname{units} squared",<br>"{{}} \\operatorname{unit} squared",<br>"{{}} units^2",<br>"{{}}
+            unit^2",<br>"{{}} \\operatorname{units}^2",<br>"{{}} \\operatorname{unit}^2"</p>
+        <a id="p29">
+            <h3>Square inches</h3>
+        </a><button onclick="copyFunction('para29');">Copy</button>
+        <p id="para29">"{{}}",<br>"{{}} square inches",<br>"{{}} sq inches",<br>"{{}} sq. inches",<br>"{{}} square
+            inch",<br>"{{}} sq inch",<br>"{{}} sq. inch",<br>"{{}} square in",<br>"{{}} sq in",<br>"{{}} sq.
+            in",<br>"{{}} square in.",<br>"{{}} sq in.",<br>"{{}} sq. in.",<br>"{{}} square
+            \\operatorname{in}",<br>"{{}}
+            sq \\operatorname{in}",<br>"{{}} sq. \\operatorname{in}",<br>"{{}} square \\operatorname{in}.",<br>"{{}} sq
+            \\operatorname{in}.",<br>"{{}} sq. \\operatorname{in}.",<br>"{{}}\\operatorname{in}
+            squared",<br>"{{}}\\operatorname{in}^2",<br>"{{}} in squared",<br>"{{}} in^2",<br>"{{}} inches
+            squared",<br>"{{}} inches^2",<br>"{{}} inch squared",<br>"{{}} inch^2",<br>"{{}} square \\in ches",<br>"{{}}
+            sq \\in ches",<br>"{{}} sq. \\in ches",<br>"{{}} square \\in ch",<br>"{{}} sq \\in ch",<br>"{{}} sq. \\in
+            ch",<br>"{{}} square \\in",<br>"{{}} sq \\in",<br>"{{}} sq. \\in",<br>"{{}} square \\in.",<br>"{{}} sq
+            \\in.",<br>"{{}} sq. \\in."</p>
+        <a id="p30">
+            <h3>Square feet</h3>
+        </a><button onclick="copyFunction('para30');">Copy</button>
+        <p id="para30">"{{}}",<br>"{{}} square feet",<br>"{{}} sq feet",<br>"{{}} sq. feet",<br>"{{}} square
+            ft",<br>"{{}} sq ft",<br>"{{}} sq. ft",<br>"{{}} square ft.",<br>"{{}} sq ft.",<br>"{{}} sq. ft.",<br>"{{}}
+            square \\operatorname{ft}",<br>"{{}} sq \\operatorname{ft}",<br>"{{}} sq. \\operatorname{ft}",<br>"{{}}
+            square
+            \\operatorname{ft}.",<br>"{{}} sq \\operatorname{ft}.",<br>"{{}} sq. \\operatorname{ft}.",<br>"{{}} square
+            foot",<br>"{{}} sq foot",<br>"{{}} sq. foot",<br>"{{}}\\operatorname{ft}
+            squared",<br>"{{}}\\operatorname{ft}^2",<br>"{{}} ft squared",<br>"{{}} ft^2",<br>"{{}} feet
+            squared",<br>"{{}} feet^2",<br>"{{}} foot squared",<br>"{{}} foot^2",<br>"{{}} f\\exponentialE et
+            squared",<br>"{{}} f\\exponentialE et^2",<br>"{{}} f\\exponentialE t squared",<br>"{{}} f\\exponentialE
+            t^2",<br>"{{}} square f\\exponentialE et",<br>"{{}} sq f\\exponentialE et",<br>"{{}} sq. f\\exponentialE
+            et",<br>"{{}} square f\\exponentialE t",<br>"{{}} sq f\\exponentialE t",<br>"{{}} sq. f\\exponentialE t"</p>
+
+        <a id="p31">
+            <h3>Cubic Inches</h3>
+        </a><button onclick="copyFunction('para31');">Copy</button>
+        <p id="para31">"{{}}",<br>"{{}} cubic inches",<br>"{{}} cubic inches",<br>"{{}} cubic inch",<br>"{{}} cubic
+            inch",<br>"{{}} cubic in",<br>"{{}} cubic \\operatorname{in}",<br>"{{}} cube inches",<br>"{{}} cube
+            inch",<br>"{{}} cube in",<br>"{{}} cubed in",<br>"{{}} cube \\operatorname{in}",<br>"{{}} cubed
+            \\operatorname{in}",<br>"{{}} cube inches",<br>"{{}} cubed inches",<br>"{{}} cube inch",<br>"{{}} cubed
+            inch",<br>"{{}}\\operatorname{in} cubed",<br>"{{}}\\operatorname{in}^3",<br>"{{}} in cubed",<br>"{{}}
+            in^3",<br>"{{}} inches cubed",<br>"{{}} inches^3",<br>"{{}} inches cubed",<br>"{{}} inches^3",<br>"{{}} inch
+            cubed",<br>"{{}} inch^3",<br>"{{}} inches cubed",<br>"{{}} inches^3"</p>
+        <a id="p32">
+            <h3>Minutes</h3>
+        </a><button onclick="copyFunction('para32');">Copy</button>
+        <p id="para32">"{{}}",<br>"{{}} m",<br>"{{}} min",<br>"{{}} MIN",<br>"{{}} mins",<br>"{{}} MINS",<br>"{{}}
+            min.",<br>"{{}} mins.",<br>"{{}} minute",<br>"{{}} minutes",<br>"{{}} \\operatorname{m}",<br>"{{}}
+            \\operatorname{min}",<br>"{{}} \\operatorname{min}s",<br>"{{}} \\operatorname{min}utes",<br>"{{}}
+            \\operatorname{MIN}",<br>"{{}} \\operatorname{mins}",<br>"{{}} \\operatorname{MINS}",<br>"{{}}
+            \\operatorname{min.}",<br>"{{}} \\operatorname{mins.}",<br>"{{}} \\operatorname{minute}",<br>"{{}}
+            \\operatorname{minutes}",<br>"1 hour 20 minutes",<br>"1 h 20 minutes",<br>"1 hours 20 minutes",<br>"1 hr 20
+            minutes",<br>"1 hrs 20 minutes",<br>"1 h 20 min",<br>"1 hours 20 min",<br>"1 hr 20 min",<br>"1 hrs 20
+            min",<br>"1 h 20 m",<br>"1 hours 20 m",<br>"1 hr 20 m",<br>"1 hrs 20 m",<br>"1 h 20 mins",<br>"1 hours 20
+            mins",<br>"1 hr 20 mins",<br>"1 hrs 20 mins",<br>"1 h 20 MIN",<br>"1 hours 20 MIN",<br>"1 hr 20 MIN",<br>"1
+            hrs 20 MIN",<br>"1 h 20 MINS",<br>"1 hours 20 MINS",<br>"1 hr 20 MINS",<br>"1 hrs 20 MINS",<br>"1 h 20
+            minute",<br>"1 hours 20 minute",<br>"1 hr 20 minute",<br>"1 hrs 20 minute",<br>"1 h 20 min.",<br>"1 hours 20
+            min.",<br>"1 hr 20 min.",<br>"1 hrs 20 min.",<br>"1 h 20 mins.",<br>"1 hours 20 mins.",<br>"1 hr 20
+            mins.",<br>"1 hrs 20 mins.",<br>"1 \\operatorname{hour} 20 \\operatorname{minutes}",<br>"1 \\operatorname{h}
+            20
+            \\operatorname{minutes}",<br>"1 \\operatorname{hours} 20 \\operatorname{minutes}",<br>"1 \\operatorname{hr}
+            20
+            \\operatorname{minutes}",<br>"1 \\operatorname{hrs} 20 \\operatorname{minutes}",<br>"1 \\operatorname{h} 20
+            \\operatorname{min}",<br>"1 \\operatorname{h} 20 \\operatorname{min}s",<br>"1 \\operatorname{h} 20
+            \\operatorname{min}utes",<br>"1 \\operatorname{hours} 20 \\operatorname{min}",<br>"1 \\operatorname{hr} 20
+            \\operatorname{min}",<br>"1 \\operatorname{hr} 20 \\operatorname{min}s",<br>"1 \\operatorname{hr} 20
+            \\operatorname{min}utes",<br>"1 \\operatorname{hrs} 20 \\operatorname{min}",<br>"1 \\operatorname{hrs} 20
+            \\operatorname{min}s",<br>"1 \\operatorname{hrs} 20 \\operatorname{min}utes",<br>"1 \\operatorname{h} 20
+            \\operatorname{m}",<br>"1 \\operatorname{hours} 20 \\operatorname{m}",<br>"1 \\operatorname{hr} 20
+            \\operatorname{m}",<br>"1 \\operatorname{hrs} 20 \\operatorname{m}",<br>"1 \\operatorname{h} 20
+            \\operatorname{mins}",<br>"1 \\operatorname{hours} 20 \\operatorname{mins}",<br>"1 \\operatorname{hr} 20
+            \\operatorname{mins}",<br>"1 \\operatorname{hrs} 20 \\operatorname{mins}",<br>"1 \\operatorname{h} 20
+            \\operatorname{MIN}",<br>"1 \\operatorname{hours} 20 \\operatorname{MIN}",<br>"1 \\operatorname{hr} 20
+            \\operatorname{MIN}",<br>"1 \\operatorname{hrs} 20 \\operatorname{MIN}",<br>"1 \\operatorname{h} 20
+            \\operatorname{MINS}",<br>"1 \\operatorname{hours} 20 \\operatorname{MINS}",<br>"1 \\operatorname{hr} 20
+            \\operatorname{MINS}",<br>"1 \\operatorname{hrs} 20 \\operatorname{MINS}",<br>"1 \\operatorname{h} 20
+            \\operatorname{minute}",<br>"1 \\operatorname{hours} 20 \\operatorname{minute}",<br>"1 \\operatorname{hr} 20
+            \\operatorname{minute}",<br>"1 \\operatorname{hrs} 20 \\operatorname{minute}",<br>"1 \\operatorname{h} 20
+            \\operatorname{min.}",<br>"1 \\operatorname{hours} 20 \\operatorname{min.}",<br>"1 \\operatorname{hr} 20
+            \\operatorname{min.}",<br>"1 \\operatorname{hrs} 20 \\operatorname{min.}",<br>"1 \\operatorname{h} 20
+            \\operatorname{mins.}",<br>"1 \\operatorname{hours} 20 \\operatorname{mins.}",<br>"1 \\operatorname{hr} 20
+            \\operatorname{mins.}",<br>"1 \\operatorname{hrs} 20 \\operatorname{mins.}"</p>
+        <a id="p33">
+            <h3>Seconds</h3>
+        </a><button onclick="copyFunction('para33');">Copy</button>
+        <p id="para33">"{{}}",<br>"{{}} s",<br>"{{}} sec",<br>"{{}} secs",<br>"{{}} SEC",<br>"{{}} SECS",<br>"{{}}
+            sec.",<br>"{{}} secs.",<br>"{{}} second",<br>"{{}} seconds",<br>"{{}} Second",<br>"{{}} Seconds",<br>"{{}}
+            \\operatorname{s}",<br>"{{}} \\operatorname{sec}",<br>"{{}} \\operatorname{secs}",<br>"{{}}
+            \\operatorname{SEC}",<br>"{{}} \\operatorname{SECS}",<br>"{{}} \\operatorname{sec.}",<br>"{{}}
+            \\operatorname{secs.}",<br>"{{}} \\operatorname{second}",<br>"{{}} \\operatorname{seconds}",<br>"{{}} \\sec
+            onds",<br>"{{}} \\sec s",<br>"{{}} \\sec ond",<br>"{{}} \\sec .",<br>"{{}} \\sec s."</p>
+        <a id="p34">
+            <h3>Hours</h3>
+        </a><button onclick="copyFunction('para34');">Copy</button>
+        <p id="para34">"{{}}",<br>"{{}} h",<br>"{{}} hr",<br>"{{}} hrs",<br>"{{}} hour",<br>"{{}} hours",<br>"{{}}
+            Hour",<br>"{{}} Hours",<br>"{{}} hr.",<br>"{{}} Hr.",<br>"{{}} H",<br>"{{}} hrs.",<br>"{{}} HRS",<br>"{{}}
+            \\operatorname{h}",<br>"{{}} \\operatorname{hr}",<br>"{{}} \\operatorname{hrs}",<br>"{{}}
+            \\operatorname{hour}",<br>"{{}} \\operatorname{hours}",<br>"{{}} \\operatorname{Hour}",<br>"{{}}
+            \\operatorname{Hours}",<br>"{{}} \\operatorname{hr.}",<br>"{{}} \\operatorname{Hr.}",<br>"{{}}
+            \\operatorname{H}",<br>"{{}} \\operatorname{HRS}"</p>
+        <a id="p35">
+            <h3>Weeks</h3>
+        </a><button onclick="copyFunction('para35');">Copy</button>
+        <p id="para35">"{{}}",<br>"{{}} weeks",<br>"{{}} week",<br>"{{}} wk",<br>"{{}} \\operatorname{weeks}",<br>"{{}}
+            \\operatorname{week}",<br>"{{}} \\operatorname{wk}",<br>"{{}} w\\exponentialE eks",<br>"{{}} w\\exponentialE
+            ks",<br>"{{}} w\\exponentialE ek",<br>"{{}} w\\exponentialE k",<br>"{{}} we\\exponentialE ks",<br>"{{}}
+            we\\exponentialE ks",<br>"{{}} we\\exponentialE k",<br>"{{}} we\\exponentialE k",<br>"{{}}
+            we\\mathrm{e}ks",<br>"{{}} w\\mathrm{e}ks",<br>"{{}} w\\mathrm{e}eks",<br>"{{}} we\\mathrm{e}k",<br>"{{}}
+            w\\mathrm{e}k",<br>"{{}} w\\mathrm{e}ek"</p>
+        <a id="p36">
+            <h3>Months</h3>
+        </a><button onclick="copyFunction('para36');">Copy</button>
+        <p id="para36">"{{}}",<br>"{{}} m",<br>"{{}} mon",<br>"{{}} mons",<br>"{{}} MON",<br>"{{}} MONS",<br>"{{}}
+            mon.",<br>"{{}} mons.",<br>"{{}} month",<br>"{{}} months",<br>"{{}} Month",<br>"{{}} Months",<br>"{{}}
+            \\operatorname{m}",<br>"{{}} \\operatorname{mon}",<br>"{{}} \\operatorname{mons}",<br>"{{}}
+            \\operatorname{MON}",<br>"{{}} \\operatorname{MONS}",<br>"{{}} \\operatorname{mon.}",<br>"{{}}
+            \\operatorname{mons.}",<br>"{{}} \\operatorname{month}",<br>"{{}} \\operatorname{months}"</p>
+        <a id="p37">
+            <h3>O'clock</h3>
+        </a><button onclick="copyFunction('para37');">Copy</button>
+        <p id="para37">
+            "4:35",<br>"04:35",<br>"4:35pm",<br>"04:35pm",<br>"435",<br>"0435",<br>"16:35",<br>"16:35pm",<br>"1635",<br>"4:35\\operatorname{pm}",<br>"04:35\\operatorname{pm}",<br>"16:35\\operatorname{pm}",<br>"4:35p.m.",<br>"04:35p.m.",<br>"16:35p.m.",<br>"4:35\\operatorname{p.m.}",<br>"04:35\\operatorname{p.m.}",<br>"16:35\\operatorname{p.m.}",<br>"4:35P.M.",<br>"04:35P.M.",<br>"16:35P.M.",<br>"4:35\\operatorname{P.M.}",<br>"04:35\\operatorname{P.M.}",<br>"16:35\\operatorname{P.M.}",<br>"4:35PM",<br>"04:35PM",<br>"16:35PM",<br>"4:35\\operatorname{PM}",<br>"04:35\\operatorname{PM}",<br>"16:35\\operatorname{PM}"
+        </p>
+        <a id="p38">
+            <h3>Cents</h3>
+        </a><button onclick="copyFunction('para38');">Copy</button>
+        <p id="para38">"{{}}",<br>"{{}} cents",<br>"{{}} cent",<br>"{{}} c",<br>"{{}} c.",<br>"{{}} cts",<br>"{{}}
+            cts.",<br>"0.{{}}",<br>"0.{{}} ",<br>".{{}} ",<br>"0.{{}}dollars",<br>"0.{{}} dollars",<br>".{{}}
+            dollars",<br>"0.{{}}dollar",<br>"0.{{}} dollar",<br>".{{}} dollar",<br>"0.{{}}Dollars",<br>"0.{{}}
+            Dollars",<br>".{{}}
+            Dollars",<br>"0.{{}}Dollar",<br>"0.{{}} Dollar",<br>".{{}} Dollar",<br>"0.{{}}dols",<br>"0.{{}}
+            dols",<br>".{{}}
+            dols",<br>"0.{{}}Dols",<br>"0.{{}} Dols",<br>".{{}} Dols",<br>"\\$0.{{}}",<br>"\\$0.{{}} ",<br>"\\$.{{}}
+            ",<br>"0.{{}}\\$",<br>"0.{{}}\\$",<br>".{{}}\\$ ",<br>"{{}} \\operatorname{cents}",<br>"{{}}
+            \\operatorname{cent}",<br>"{{}} \\operatorname{c}",<br>"{{}} \\operatorname{c.}",<br>"{{}}
+            \\operatorname{cts}",<br>"{{}} \\operatorname{cts.}",<br>"0.{{}} \\operatorname{dollars}",<br>"0.{{}}
+            \\operatorname{dollars}",<br>".{{}} \\operatorname{dollars}",<br>"0.{{}} \\operatorname{dollar}",<br>"0.{{}}
+            \\operatorname{dollar}",<br>".{{}} \\operatorname{dollar}",<br>"0.{{}} \\operatorname{dols}",<br>"0.{{}}
+            \\operatorname{dols}",<br>".{{}} \\operatorname{dols}",<br>"{{}} \\operatorname{Cents}",<br>"{{}}
+            \\operatorname{Cent}",<br>"0.{{}} \\operatorname{Dollars}",<br>"0.{{}} \\operatorname{Dollars}",<br>".{{}}
+            \\operatorname{Dollars}",<br>"0.{{}} \\operatorname{Dollar}",<br>"0.{{}} \\operatorname{Dollar}",<br>".{{}}
+            \\operatorname{Dollar}",<br>"0.{{}} \\operatorname{Dols}",<br>"0.{{}} \\operatorname{Dols}",<br>".{{}}
+            \\operatorname{Dols}"</p>
+        <a id="p39">
+            <h3>Dollars</h3>
+        </a><button onclick="copyFunction('para39');">Copy</button>
+        <p id="para39">"{{}}",<br>"{{}}.00",<br>"{{}}dollars",<br>"{{}}.00 dollars",<br>"{{}}dollar",<br>"{{}}.00
+            dollar",<br>"{{}}dols",<br>"{{}}.00 dols",<br>"{{}}Dollars",<br>"{{}}.00
+            Dollars",<br>"{{}}Dollar",<br>"{{}}.00 Dollar",<br>"{{}}Dols",<br>"{{}}.00
+            Dols",<br>"\\${{}}",<br>"\\${{}}.00
+            ",<br>"{{}}\\$",<br>"{{}}.00\\$",<br>"{{}} \\operatorname{dollars}",<br>"{{}}.00
+            \\operatorname{dollars}",<br>"{{}} \\operatorname{dollar}",<br>"{{}}.00 \\operatorname{dollar}",<br>"{{}}
+            \\operatorname{dols}",<br>"{{}}.00 \\operatorname{dols}",<br>"{{}} \\operatorname{Dollars}",<br>"{{}}.00
+            \\operatorname{Dollars}",<br>"{{}} \\operatorname{Dollar}",<br>"{{}}.00 \\operatorname{Dollar}",<br>"{{}}
+            \\operatorname{Dols}",<br>"{{}}.00 \\operatorname{Dols}"<br></p>
+
+    </div>
+</body>
+
+</html>
