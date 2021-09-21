@@ -85,4 +85,15 @@ p {
     border-style: solid;
     font-family: monospace;
     margin-bottom: 50px;
+    padding: 5px
+}
+
+div {
+    padding: 10px;
+}
+
+.ib {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
 }

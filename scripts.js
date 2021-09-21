@@ -30,3 +30,8 @@ function updateParas(q) {
     }
     // console.log("function called");
 }
+
+function update_escape() {
+    var text_in = document.getElementById("input").value;
+    document.getElementById("output").innerHTML = text_in.replace(/(\{\' \'\})?(?<!\>)\n(?!\<)/g, ' ').replace(/\t/g, ' ').replace(/ +/g, ' ').replace(/\\/g, '\\\\').replace(/\"/g, '\\"').replace(/\> \</, '><').replace(/\</g, "&lt").replace(/\>/, '&gt');//
+}
