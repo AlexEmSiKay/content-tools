@@ -40,7 +40,7 @@ function updateParas() {
             for (var j = extra.length / 2; j < extra.length; j++) {
                 extra[j] = extra[j].slice(0, ((j == extra.length - 1) ? -1 : -2)) + " = " + vars[i].value + '",';
             }
-            paras[i].innerHTML += ",<br>" + extra.join('<br>')
+            paras[i].innerHTML += ",<br>" + extra.join('<br>').slice(0, -1)
         }
         // console.log("function called");
     }
