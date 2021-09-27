@@ -97,3 +97,8 @@ div {
     width: 40%;
     vertical-align: top;
 }
+
+.variable {
+    margin: 0 5px;
+    width: 7em;
+}
