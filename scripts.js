@@ -28,8 +28,14 @@ function updateParas() {
     else {
         var lead = q
     }
+    if (q % 1 != 0) {
+        var trail = 'DELETE ME'
+    }
+    else {
+        var trail = q
+    }
     for (var i = 0; i < paras.length; i++) {
-        paras[i].innerHTML = parasText[i].replace(/{{}}/g, q).replace(/{{h}}/g, h).replace(/{{m}}/g, m).replace(/{{d}}/g, d).replace(/{{dF}}/g, dFixed).replace(/{{l}}/g, lead);
+        paras[i].innerHTML = parasText[i].replace(/{{}}/g, q).replace(/{{h}}/g, h).replace(/{{m}}/g, m).replace(/{{d}}/g, d).replace(/{{dF}}/g, dFixed).replace(/{{l}}/g, lead).replace(/{{t}}/g, trail).replace(/<br>/g, '<br>\n').replace(/\".*DELETE ME[\s\S]*?\"(,<br>)?/g, '');
         console.log(vars[i].value);
         if (vars[i].value != "") {
             var extra = (paras[i].innerHTML + ',<br>' + paras[i].innerHTML).split('<br>');
