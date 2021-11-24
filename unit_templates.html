@@ -204,7 +204,12 @@
             onclick="copyFunction('para14');">Copy</button>
         <p id="para14">"{{}}",<br>"{{}} kilolitres",<br>"{{}} kiloliters",<br>"{{}} kilolitre",<br>"{{}}
             kiloliter",<br>"{{}} kl",<br>"{{}} kL",<br>"{{}} KL",<br>"{{}} \\operatorname{kl}",<br>"{{}}
-            \\operatorname{kL}",<br>"{{}} \\operatorname{KL}"<br><br>"{{}}",<br>"{{}} milligrams",<br>"{{}}
+            \\operatorname{kL}",<br>"{{}} \\operatorname{KL}"</p>
+        <a id="pmg">
+            <h3>Milligrams</h3>
+        </a><input class="variable" id="vmg" type="text" placeholder="Enter variable" oninput="updateParas();"><button
+            onclick="copyFunction('paramg');">Copy</button>
+        <p id="paramg">"{{}}",<br>"{{}} milligrams",<br>"{{}}
             milligram",<br>"{{}} mg",<br>"{{}} mG",<br>"{{}} MG",<br>"{{}} \\operatorname{mg}",<br>"{{}}
             \\operatorname{mG}",<br>"{{}} \\operatorname{MG}"</p>
         <a id="p15">
@@ -315,8 +320,8 @@
             \\operatorname{mi.}",<br>"{{}} \\operatorname{MI}"</p>
         <a id="punits">
             <h3>Units</h3>
-        </a><input class="variable" id="vunits" type="text" placeholder="Enter variable" oninput="updateParas();"><button
-            onclick="copyFunction('paraunits');">Copy</button>
+        </a><input class="variable" id="vunits" type="text" placeholder="Enter variable"
+            oninput="updateParas();"><button onclick="copyFunction('paraunits');">Copy</button>
         <p id="paraunits">"{{}}",<br>"{{}} u",<br>"{{}} units",<br>"{{}} unit"</p>
         <a id="p28">
             <h3>Square units</h3>
