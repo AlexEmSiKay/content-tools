@@ -43,12 +43,12 @@ function updateParas() {
             var extra = (paras[i].innerHTML + ',<br>' + paras[i].innerHTML).split('<br>');
             console.log(extra)
             for (var j = 0; j < extra.length / 2; j++) {
-                extra[j] = '"' + vars[i].value + " = " + extra[j].slice(1);
+                extra[j] = vars[i].value + " = " + extra[j];
             }
             for (var j = extra.length / 2; j < extra.length; j++) {
-                extra[j] = extra[j].slice(0, ((j == extra.length - 1) ? -1 : -2)) + " = " + vars[i].value + '",';
+                extra[j] = extra[j] + " = " + vars[i].value;
             }
-            paras[i].innerHTML += ",<br>" + extra.join('<br>').slice(0, -1)
+            paras[i].innerHTML += "<br>" + extra.join('<br>')
         }
         // console.log("function called");
 
