@@ -17,7 +17,7 @@ function copyFunction(para) {
 }
 
 function updateParas() {
-    q = document.getElementById("quantity").value
+    const q = document.getElementById("quantity").value
     var h = Math.floor(q / 60);
     var m = q % 60
     var d = q / 100
@@ -35,11 +35,12 @@ function updateParas() {
     else {
         var trail = q
     }
+
     for (var i = 0; i < paras.length; i++) {
-        paras[i].innerHTML = parasText[i].replace(/{{}}/g, q).replace(/{{h}}/g, h).replace(/{{m}}/g, m).replace(/{{d}}/g, d).replace(/{{dF}}/g, dFixed).replace(/{{l}}/g, lead).replace(/{{t}}/g, trail).replace(/{{c}}/g, c).replace(/<br>/g, '<br>\n').replace(/\".*DELETE ME[\s\S]*?\"(,<br>)?/g, '');
-        console.log(vars[i].value);
-        if (vars[i].value != "") {
-            var extra = (paras[i].innerHTML + '<br>' + paras[i].innerHTML).split('<br>');
+        paras[i].innerHTML = parasText[i].replace(/{{}}/g, q).replace(/{{h}}/g, h).replace(/{{m}}/g, m).replace(/{{d}}/g, d).replace(/{{dF}}/g, dFixed).replace(/{{l}}/g, lead).replace(/{{t}}/g, trail).replace(/{{c}}/g, c).replace(/<br>/g, '<br>\n').replace(/\".*DELETE ME[\s\S]*?\"(,<br>)?/g, '').replace(/\n"/g, '"');
+        //console.log(vars[i].value);
+        if (vars[i].value !== "") {
+            var extra = (paras[i].innerHTML + ',<br>' + paras[i].innerHTML).split('<br>');
             console.log(extra)
             for (var j = 0; j < extra.length / 2; j++) {
                 extra[j] = vars[i].value + " = " + extra[j];
@@ -50,6 +51,25 @@ function updateParas() {
             paras[i].innerHTML += "<br>" + extra.join('<br>')
         }
         // console.log("function called");
+
+    }
+    if (!(q < 1000 || isNaN(+q))) {
+        console.log('running commas')
+        var num = Math.floor(q);
+        var dcount = 0
+        while (num > 0) {
+            num = Math.floor(num / 10);
+            dcount++
+        }
+        console.log(dcount)
+        var u = q
+        for (var i = 0; i < Math.floor((dcount - 1) / 3); i++) {
+            u = u.slice(0, dcount - 3 * (i + 1)) + "," + u.slice(dcount - 3 * (i + 1))
+        }
+        var qr = u
+        for (var i = 0; i < paras.length; i++) {
+            paras[i].innerHTML += ',<br>' + parasText[i].replace(/{{}}/g, qr)
+        }
     }
 }
 
