@@ -73,6 +73,14 @@ function updateParas() {
     }
 }
 
+function updateCoords() {
+    var x = document.getElementById("vx").value
+    var y = document.getElementById("vy").value
+    for (var i = 0; i < paras.length; i++) {
+        paras[i].innerHTML = parasText[i].replace(/{{x}}/g, x).replace(/{{y}}/g, y).replace(/<br>/g, '<br>\n');
+    }
+}
+
 function update_escape() {
     var text_in = document.getElementById("input").value;
     document.getElementById("output").innerHTML = text_in.replace(/(\{\' \'\})?\n/g, ' ').replace(/\t/g, ' ').replace(/ +/g, ' ').replace(/\\/g, '\\\\').replace(/\"/g, '\\"').replace(/\> \</, '><').replace(/\</g, "&lt").replace(/\>/, '&gt').replace(/\n/g, '<br>');//
