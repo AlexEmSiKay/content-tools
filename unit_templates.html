@@ -54,6 +54,7 @@
         <a href="#p37">O'clock</a>
         <a href="#p38">Cents</a>
         <a href="#p39">Dollars</a>
+        <a href="#p40">Cartesian coordinates</a>
     </div>
     <header>
 
@@ -248,7 +249,7 @@
             celsius<br>{{}} \degree Celsius<br>{{}} \degree C<br>{{}} \degree c<br>{{}} \degree
             \operatorname{C}<br>{{}} \degree \operatorname{c}<br>{{}} C<br>{{}} c<br>{{}}
             \\operatorname{C}<br>{{}} \operatorname{c}
-</p>
+        </p>
         <a id="p20">
             <h3>Degrees Fahrenheit</h3>
         </a><input class="variable" id="v20" type="text" placeholder="Enter variable" oninput="updateParas();"><button
@@ -323,7 +324,7 @@
         <p id="para27">{{}}<br>{{}} mile<br>{{}} miles<br>{{}} mi<br>{{}} mi.<br>{{}} MI<br>{{}}
             \operatorname{mile}<br>{{}} \operatorname{miles}<br>{{}} \operatorname{mi}<br>{{}}
             \operatorname{mi.}<br>{{}} \operatorname{MI}</p>
-   <a id="punits">
+        <a id="punits">
             <h3>Units</h3>
         </a><input class="variable" id="vunits" type="text" placeholder="Enter variable"
             oninput="updateParas();"><button onclick="copyFunction('paraunits');">Copy</button>
@@ -536,7 +537,14 @@
             \operatorname{Dollars}<br>{{}} \operatorname{Dollar}<br>{{t}}.00 \operatorname{Dollar}<br>{{}}
             \operatorname{Dols}<br>{{t}}.00 \operatorname{Dols}
         </p>
-
+        <a id="p40">
+            <h3>Cartesian coordinates</h3>
+        </a>
+        <input class="variable" id="vx" type="text" placeholder="Enter x-coordinate" oninput="updateCoords();"><input class="variable" id="vy" type="text" placeholder="Enter y-coordinate" oninput="updateCoords();"><button
+            onclick="copyFunction('para40');">Copy</button>
+        <p id="para40">
+            \left({{x}},{{y}}\right)<br>{{x}},{{y}}<br>({{x}},{{y}})<br>[{{x}},{{y}}]<br>x={{x}},y={{y}}<br>y={{y}},x={{x}}<br>\lbrack{{x}},{{y}}\rbrack
+        </p>
     </div>
 </body>
 
